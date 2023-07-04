@@ -19,3 +19,5 @@
 6.Modify the values in the material.  
 ![Image](https://github.com/Parrot222/UnityURP-SunShaftsEffect/blob/main/Images/6.png)  
 
+7.Add this script to the sun in your scene. (Note: There should be only one sun in the scene.)  
+![Image](https://github.com/Parrot222/UnityURP-SunShaftsEffect/blob/main/Images/7.png)  
