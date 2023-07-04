@@ -5,7 +5,6 @@ Shader "Unlit/SunShaftEffect"
         _MainTex ("Texture", 2D) = "white" {}
         _Albedo("Albedo", Color) = (1,1,1)
         _Step("Luminance Step", Float) = 1
-        _Step2("Luminance Step 2", Float) = 0
         _BlurRadius("Blur Radius", Float) = 0
         _BlurStep("Blur Step", Integer) = 1
         _ShaftAlpha("Shaft Alpha", Range( 0 , 5)) = 0.5
@@ -42,7 +41,6 @@ Shader "Unlit/SunShaftEffect"
             fixed4 _Albedo;
             float _BlurRadius;
             float _Step;
-            float _Step2;
             float _ShaftAlpha;
             int _BlurStep;
             float _SunVisible;
@@ -70,7 +68,7 @@ Shader "Unlit/SunShaftEffect"
                 for (int j = 0; j < _BlurStep; j++)
                 {
                     fixed4 tmpColor = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_MainTex, i.uv.xy);
-                    float ray = smoothstep(_Step, _Step2, dot(tmpColor.rgb, float3(0.2126, 0.7152, 0.0722)));
+                    float ray = smoothstep(_Step, 1, dot(tmpColor.rgb, float3(0.2126, 0.7152, 0.0722)));
                     tmpColor *= ray;
                     color += tmpColor * 0.01;
                     i.uv.xy += blurVector;
