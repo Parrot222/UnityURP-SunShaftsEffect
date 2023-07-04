@@ -1,4 +1,4 @@
 # UnityURP-SunShaftsEffect
 
 ## How to use it?  
-![Image]("Images/1.png")
+![Image](https://github.com/Parrot222/UnityURP-SunShaftsEffect/blob/main/Images/1.png)
